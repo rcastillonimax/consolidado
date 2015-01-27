@@ -23,8 +23,13 @@
             $namedb="consolidado_schema";
             $table="reportes2014";
             mysqli_select_db($link,$namedb);
-            $query="SELECT * FROM $table";
-
+            //recuperamos valor
+            $searchby=$_REQUEST['searchby'];
+            echo "-$searchby-<br>";
+            $txtsearchby=$_REQUEST['txtsearchby'];
+            echo "-$txtsearchby-<br>";
+            $query="SELECT * FROM $table WHERE $searchby = '$txtsearchby'";
+            echo "-$query-<br>";
             if($result=mysqli_query ($link,$query))
             {
                 $fields_num=mysqli_field_count($link);
@@ -52,7 +57,7 @@
                     echo "</tr>\n";
                 }
 
-            } echo "Error en consulta".mysqli_error($link);
+            } else echo "Error en consulta".mysqli_error($link);
 
             /*
             if($result->num_rows>0)

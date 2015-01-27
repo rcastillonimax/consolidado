@@ -40,11 +40,13 @@
                         <p>Selecciona críterio de búsqueda:
                             <br>
                             <form name="frmComp" id="frmComp" action="search1.php" method="get">
-                                <select name='consolidado' id='con'>
-                                    <option value='0'>FOLIO</option>
-                                    <option value='1'>NÚM. SERIE</option>
-                                    <option value='2'>NÚM. DE ORDEN DE SERVICIO</option>
-                                </select>
+                                <select name='searchby' id='searchby'>
+                                    <option value='FOLIO'>FOLIO</option>
+                                    <option value='NÚM. SERIE'>NÚM. SERIE</option>
+                                    <option value='NÚM. DE ORDEN DE SERVICIO'>NÚM. DE ORDEN DE SERVICIO</option>
+                                </select><br>
+                                Texto a buscar:<br>
+                                <input type="text" name="txtsearchby">
                                 <input type="submit" value="BUSCAR" align="center" />
                             </form>
                         </p>
