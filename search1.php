@@ -25,10 +25,15 @@
             mysqli_select_db($link,$namedb);
             //recuperamos valor
             $searchby=$_REQUEST['searchby'];
-            echo "-$searchby-<br>";
+            //echo "-$searchby-<br>";
+            //cambiar espacios por _
+            $searchby=str_replace(" ","_",$searchby);
             $txtsearchby=$_REQUEST['txtsearchby'];
-            echo "-$txtsearchby-<br>";
-            $query="SELECT * FROM $table WHERE $searchby = '$txtsearchby'";
+            //echo "-$txtsearchby-<br>";
+            
+            //$query="SELECT * FROM $table WHERE '".$searchby."' = \`".$txtsearchby."\`";
+            //SELECT * FROM $table '$txtsearchby' YA ESTA BIEN SOLO FALTA EL WHERE
+            $query="SELECT * FROM $table WHERE `$searchby` = '$txtsearchby'";
             echo "-$query-<br>";
             if($result=mysqli_query ($link,$query))
             {
@@ -57,7 +62,7 @@
                     echo "</tr>\n";
                 }
 
-            } else echo "Error en consulta".mysqli_error($link);
+            } else echo "Error en consulta:<b>".mysqli_error($link);
 
             /*
             if($result->num_rows>0)
