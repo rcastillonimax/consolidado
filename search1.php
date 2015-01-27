@@ -42,7 +42,7 @@
 
                 //Imprimimos tabla
 
-                while($row = mysql_fetch_row($result))
+                while($row = mysqli_fetch_row($result))
                 {
                     echo "<tr>";
                     // $row is array... foreach( .. ) puts every element
@@ -52,7 +52,7 @@
                     echo "</tr>\n";
                 }
 
-            } echo "Error en consulta".mysqli_error();
+            } echo "Error en consulta".mysqli_error($link);
 
             /*
             if($result->num_rows>0)
