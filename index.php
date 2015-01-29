@@ -36,7 +36,6 @@
 
                 <article>
                     <header>
-                        <h1>búsqueda por:</h1>
                         <p>Selecciona críterio de búsqueda:
                             <br>
                             <form name="frmComp" id="frmComp" action="search1.php" method="get">
@@ -46,7 +45,7 @@
                                     <option value='NÚM. DE ORDEN DE SERVICIO'>NÚM. DE ORDEN DE SERVICIO</option>
                                 </select><br>
                                 Texto a buscar:<br>
-                                <input type="text" name="txtsearchby">
+                                <input title:"Se necesita un valor" type="text" name="txtsearchby" required="required">
                                 <input type="submit" value="BUSCAR" align="center" />
                             </form>
                         </p>
