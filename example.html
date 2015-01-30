@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0056)http://tablesorter.com/docs/example-options-headers.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+        <title>jQuery plugin: Tablesorter 2.0 - Disable headers using options</title>
+        <link rel="stylesheet" href="./example_files/jq.css" type="text/css" media="print, projection, screen">
+        <link rel="stylesheet" href="./example_files/style.css" type="text/css" id="" media="print, projection, screen">
+        <script type="text/javascript" src="./example_files/jquery-latest.js"></script><style type="text/css"></style>
+
+        <script type="text/javascript" src="./example_files/__jquery.tablesorter.js"></script>
+        <script type="text/javascript" src="./example_files/jquery.tablesorter.pager.js"></script>
+        <script type="text/javascript" src="./example_files/chili-1.8b.js"></script>
+        <script type="text/javascript" src="./example_files/docs.js"></script>
+        <script type="text/javascript" src="./example_files/examples.js"></script>
+        <script type="text/javascript" id="js">$(document).ready(function() {
+            $("table").tablesorter({
+                // pass the headers argument and assing a object
+                headers: {
+                    // assign the secound column (we start counting zero)
+                    1: {
+                        // disable it by setting the property sorter to false
+                        sorter: false
+                    },
+                    // assign the third column (we start counting zero)
+                    2: {
+                        // disable it by setting the property sorter to false
+                        sorter: false
+                    }
+                }
+            });
+        });</script>
+        <link rel="stylesheet" type="text/css" href="./example_files/javascript.css"><link rel="stylesheet" type="text/css" href="./example_files/html.css"></head>
+    <body>
+        <div style="width: 728px; margin: 10px auto;">
+            <!-- BEGIN UAT â€“ 728Ã—90 â€“ Tablesorter: Tablesorter â€“ DO NOT MODIFY --> 
+            <script type="text/javascript" src="http://ad-cdn.technoratimedia.com/00/49/79/uat_17949.js?ad_size=728x90"></script> <!-- END TAG -->
+        </div>
+        <div id="banner">	
+            <h1>table<em>sorter</em></h1>
+            <h2>Disable headers using options</h2>
+            <h3>Flexible client-side table sorting</h3>
+            <a href="http://tablesorter.com/docs/index.html">Back to documentation</a>
+        </div>
+        <div id="main">
+            <div id="skyscraper" class="wide">
+                <div class="ad"><script type="text/javascript" src="http://ad-cdn.technoratimedia.com/00/49/79/uat_17949.js?ad_size=300x250,300x600"></script></div>
+                <div class="ad"><script type="text/javascript" src="http://ad-cdn.technoratimedia.com/00/49/79/uat_17949.js?ad_size=300x250,300x600"></script></div>
+            </div>
+            <h1>Demo</h1>
+            <div id="demo">
+                <table cellspacing="1" class="tablesorter">
+                    <thead>
+                        <tr>
+                            <th class="header headerSortUp">First Name</th>
+                            <th class="">Last Name</th>
+                            <th class="">Age</th>
+                            <th class="header">Total</th>
+                            <th class="header">Discount</th>
+                            <th class="header">Date</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+
+
+
+
+                        <tr>
+                            <td>Peter</td>
+                            <td>Parker</td>
+                            <td>28</td>
+                            <td>$9.99</td>
+                            <td>20%</td>
+
+                            <td>Jul 6, 2006 8:14 AM</td>
+                        </tr><tr>
+                            <td>John</td>
+                            <td>Hood</td>
+                            <td>33</td>
+                            <td>$19.99</td>
+                            <td>25%</td>
+
+                            <td>Dec 10, 2002 5:14 AM</td>
+                        </tr><tr>
+                            <td>Clark</td>
+                            <td>Kent</td>
+                            <td>18</td>
+                            <td>$15.89</td>
+                            <td>44%</td>
+                            <td>Jan 12, 2003 11:14 AM</td>
+                        </tr><tr>
+                            <td>Bruce</td>
+                            <td>Almighty</td>
+                            <td>45</td>
+                            <td>$153.19</td>
+                            <td>44%</td>
+
+                            <td>Jan 18, 2001 9:12 AM</td>
+                        </tr><tr>
+                            <td>Bruce</td>
+                            <td>Evans</td>
+                            <td>22</td>
+                            <td>$13.19</td>
+                            <td>11%</td>
+                            <td>Jan 18, 2007 9:12 AM</td>
+                        </tr></tbody>
+                </table>
+            </div>
+            <h1>Javascript</h1>
+            <div id="javascript">
+                <pre class="javascript">$(<span class="global">document</span>).ready(<span class="keywords">function</span>()&nbsp;{&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;$(<span class="string">"table"</span>).tablesorter({&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="com">//&nbsp;pass&nbsp;the&nbsp;headers&nbsp;argument&nbsp;and&nbsp;assing&nbsp;a&nbsp;object</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;headers:&nbsp;{&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="com">//&nbsp;assign&nbsp;the&nbsp;secound&nbsp;column&nbsp;(we&nbsp;start&nbsp;counting&nbsp;zero)</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="numbers">1</span>:&nbsp;{&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="com">//&nbsp;disable&nbsp;it&nbsp;by&nbsp;setting&nbsp;the&nbsp;property&nbsp;sorter&nbsp;to&nbsp;false</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sorter:&nbsp;<span class="keywords">false</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="com">//&nbsp;assign&nbsp;the&nbsp;third&nbsp;column&nbsp;(we&nbsp;start&nbsp;counting&nbsp;zero)</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="numbers">2</span>:&nbsp;{&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="com">//&nbsp;disable&nbsp;it&nbsp;by&nbsp;setting&nbsp;the&nbsp;property&nbsp;sorter&nbsp;to&nbsp;false</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sorter:&nbsp;<span class="keywords">false</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;});&nbsp;<br>});</pre>
+            </div>
+            <h1>HTML</h1>
+            <div id="html">
+                <pre class="html"><span class="tag">&lt;table</span><span class="aname">&nbsp;cellspacing</span>=<span class="avalue">"1"</span><span class="aname">&nbsp;class</span>=<span class="avalue">"tablesorter"</span><span class="tag">&gt;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;thead</span><span class="tag">&gt;</span><span class="tag">&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;tr</span><span class="tag">&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;th</span><span class="tag">&gt;</span>first&nbsp;name<span class="tag">&lt;/th&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;th</span><span class="tag">&gt;</span>last&nbsp;name<span class="tag">&lt;/th&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;th</span><span class="tag">&gt;</span>age<span class="tag">&lt;/th&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;th</span><span class="tag">&gt;</span>total<span class="tag">&lt;/th&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;th</span><span class="tag">&gt;</span>discount<span class="tag">&lt;/th&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;th</span><span class="tag">&gt;</span>date<span class="tag">&lt;/th&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/tr&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/thead&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;tbody</span><span class="tag">&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;tr</span><span class="tag">&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td</span><span class="tag">&gt;</span>peter<span class="tag">&lt;/td&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td</span><span class="tag">&gt;</span>parker<span class="tag">&lt;/td&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td</span><span class="tag">&gt;</span>28<span class="tag">&lt;/td&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td</span><span class="tag">&gt;</span>$9.99<span class="tag">&lt;/td&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td</span><span class="tag">&gt;</span>20%<span class="tag">&lt;/td&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td</span><span class="tag">&gt;</span>jul&nbsp;6,&nbsp;2006&nbsp;8:14&nbsp;am<span class="tag">&lt;/td&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/tr&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;tr</span><span class="tag">&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td</span><span class="tag">&gt;</span>john<span class="tag">&lt;/td&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td</span><span class="tag">&gt;</span>hood<span class="tag">&lt;/td&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td</span><span class="tag">&gt;</span>33<span class="tag">&lt;/td&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td</span><span class="tag">&gt;</span>$19.99<span class="tag">&lt;/td&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td</span><span class="tag">&gt;</span>25%<span class="tag">&lt;/td&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td</span><span class="tag">&gt;</span>dec&nbsp;10,&nbsp;2002&nbsp;5:14&nbsp;am<span class="tag">&lt;/td&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/tr&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;tr</span><span class="tag">&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td</span><span class="tag">&gt;</span>clark<span class="tag">&lt;/td&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td</span><span class="tag">&gt;</span>kent<span class="tag">&lt;/td&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td</span><span class="tag">&gt;</span>18<span class="tag">&lt;/td&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td</span><span class="tag">&gt;</span>$15.89<span class="tag">&lt;/td&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td</span><span class="tag">&gt;</span>44%<span class="tag">&lt;/td&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td</span><span class="tag">&gt;</span>jan&nbsp;12,&nbsp;2003&nbsp;11:14&nbsp;am<span class="tag">&lt;/td&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/tr&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;tr</span><span class="tag">&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td</span><span class="tag">&gt;</span>bruce<span class="tag">&lt;/td&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td</span><span class="tag">&gt;</span>almighty<span class="tag">&lt;/td&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td</span><span class="tag">&gt;</span>45<span class="tag">&lt;/td&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td</span><span class="tag">&gt;</span>$153.19<span class="tag">&lt;/td&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td</span><span class="tag">&gt;</span>44%<span class="tag">&lt;/td&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td</span><span class="tag">&gt;</span>jan&nbsp;18,&nbsp;2001&nbsp;9:12&nbsp;am<span class="tag">&lt;/td&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/tr&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;tr</span><span class="tag">&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td</span><span class="tag">&gt;</span>bruce<span class="tag">&lt;/td&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td</span><span class="tag">&gt;</span>evans<span class="tag">&lt;/td&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td</span><span class="tag">&gt;</span>22<span class="tag">&lt;/td&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td</span><span class="tag">&gt;</span>$13.19<span class="tag">&lt;/td&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td</span><span class="tag">&gt;</span>11%<span class="tag">&lt;/td&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td</span><span class="tag">&gt;</span>jan&nbsp;18,&nbsp;2007&nbsp;9:12&nbsp;am<span class="tag">&lt;/td&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/tr&gt;</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/tbody&gt;</span>&nbsp;<br><span class="tag">&lt;/table&gt;</span></pre>
+            </div>
+        </div>
+        <script src="./example_files/urchin.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            _uacct = "UA-2189649-2";
+            urchinTracker();
+        </script>
+
+
+
+    </body></html>
