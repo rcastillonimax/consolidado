@@ -34,7 +34,7 @@
 
 $(document).ready(function() {
     var table = $('#example').DataTable( {
-        "scrollY": "200px",
+        /*"scrollY": "200px",*/
         "paging": false
     } );
 
@@ -99,14 +99,25 @@ $(document).ready(function() {
                     { 
                         
                         $fields_num=mysqli_field_count($link);
-                        $hideColumn="Elije columnas a ocultar\n";
+                        $hideColumn="Elije columnas a ocultar\n<br>";
                         $table=$table."<h1>Table: Se encontraron ".mysqli_num_rows($result)." registro(s)</h1>\n";
                         //comienza cabecera de la tabla
 
                         /*                        $table=$table."<table data-role='table' data-mode='columntoggle' class='ui-responsive' class='display' id='example' cellspacing='0' width='100%'>\n\t<thead>\n\t\t<tr>\n";
                         */
-                        $table=$table."<table class='display' id='example' cellspacing='0' width='100%'>\n\t<thead>\n\t\t<tr>\n";
+                        $table=$table."<table class='display' id='example' cellspacing='0' width='100%' border='1'>\n\t<thead>\n\t\t<tr>\n";
 
+                        
+                         for($i=0;$i<$fields_num;$i++)
+                        {
+                            
+                            $table=$table."\t\t\t<th class='header'>\n$i\n\t\t\t</th>\n\n";
+                        }
+                        $table=$table."\t\t</tr>\n\t\n\t\t<tr>";
+                        
+                        
+                        
+                        
                         // obtiene headers
                         //Revisar, probablemente se pueda cambiar por un while***
                         for($i=0;$i<$fields_num;$i++)
@@ -114,7 +125,7 @@ $(document).ready(function() {
                             $field=mysqli_fetch_field($result);
                             $header=str_replace("_"," ",$field->name);
                             $table=$table."\t\t\t<th class='header'>\n{$header}\n\t\t\t</th>\n\n";
-                            $hideColumn=$hideColumn."Elije columnas a ocultar\n"
+                            $hideColumn=$hideColumn."<a class='toggle-vis' data-column='$i'>{$i}</a> - \n";
                         }
                         $table=$table."\t\t</tr>\n\t</thead>\n";
                         $table=$table."\n\t<tbody>";
@@ -131,7 +142,7 @@ $(document).ready(function() {
                         //Terminamos Tabla
                         $table=$table."\n\t</tbody>";
                         //Imprimos Tabla
-                        echo "$table";
+                        echo $hideColumn."\n"."$table";
                     } else echo "<H1><br>Sin resultados</H1>";
                 } else echo "Error en consulta:<b>".mysqli_error($link);
             ?>
