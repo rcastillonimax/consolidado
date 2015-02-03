@@ -111,7 +111,7 @@ $(document).ready(function() {
                          for($i=0;$i<$fields_num;$i++)
                         {
                             
-                            $table=$table."\t\t\t<th class='header'>\n$i\n\t\t\t</th>\n\n";
+                            $table=$table."\t\t\t<td>\n$i\n\t\t\t</td>\n\n";
                         }
                         $table=$table."\t\t</tr>\n\t\n\t\t<tr>";
                         
@@ -123,8 +123,15 @@ $(document).ready(function() {
                         for($i=0;$i<$fields_num;$i++)
                         {
                             $field=mysqli_fetch_field($result);
+                            if($i!=27 or $i!=35)
                             $header=str_replace("_"," ",$field->name);
-                            $table=$table."\t\t\t<th class='header'>\n{$header}\n\t\t\t</th>\n\n";
+                            /*$table=$table."\t\t\t<th class='header'>\n{$header}\n\t\t\t</th>\n\n";*/
+                            if($i==27 or $i==35) {
+                                $espacios="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+                                $table=$table."\t\t\t<th class='header'>\n$espacios{$header}$espacios\n\t\t\t</th>\n\n";
+                            } else $table=$table."\t\t\t<th class='header'>\n{$header}\n\t\t\t</th>\n\n";
+                            
+                            
                             $hideColumn=$hideColumn."<a class='toggle-vis' data-column='$i'>{$i}</a> - \n";
                         }
                         $table=$table."\t\t</tr>\n\t</thead>\n";
