@@ -12,8 +12,8 @@
         <link rel="stylesheet" type="text/css" href="jquery.dataTables.css">
 
         <!--    Jquery para ordenacion y formato de tablas, si se descarga Jquery no es necesario las primeras 2 lineas-->
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<!--        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <!--        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
         <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>   -->
         <script src="http://cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
 
@@ -25,7 +25,7 @@
         </script>     
         -->
 
-<!--        Jquery Tablesorter para la Ordenacion, busqueda, ocultar/mostrar columnas-->
+        <!--        Jquery Tablesorter para la Ordenacion, busqueda, ocultar/mostrar columnas-->
         <script type="text/javascript" class="init">
             $(document).ready(function() {
                 var table = $('#example').DataTable( {
@@ -41,6 +41,9 @@
 
                     // Toggle the visibility
                     column.visible( ! column.visible() );
+                    $('table').stickyTableHeaders('destroy');
+                    $('table').stickyTableHeaders();
+
                 } );
             } );
         </script>    
@@ -83,7 +86,7 @@
                 if(mysqli_num_rows($result)>0)
                 { 
                     $fields_num=mysqli_field_count($link);
-                    $hideColumn="CLICK para OCULTAR/MOSTRAR columnas\n<br>";
+                    /*$hideColumn="CLICK para OCULTAR/MOSTRAR columnas\n<br>";*/
                     $table=$table."<h3>Se encontraron ".mysqli_num_rows($result)." registro(s)</h3>\n";
                     //comienza cabecera de la tabla
 
@@ -99,6 +102,8 @@
                     }
                     $table=$table."\t\t</tr>\n\t\n\t\t<tr>";   */
 
+                    //Generamos row fila con encabezdos para ocultar columnas, se imprimira en la ultima fila
+                    $hideColumn="\n\t\t<tr>\n";
 
                     // obtiene headers
                     //Revisar, probablemente se pueda cambiar por un while***
@@ -116,11 +121,13 @@
                             $table=$table."\t\t\t<th class='header'>\n$espacios{$header}$espacios\n\t\t\t</th>\n\n";
                         } else $table=$table."\t\t\t<th class='header'>\n{$header}\n\t\t\t</th>\n\n";
 
-
-                        $hideColumn=$hideColumn."<a class='toggle-vis' data-column='$i'>{$i}</a> - \n";
+                        $hideColumn=$hideColumn."\n\t\t\t<td>\n";
+                        $hideColumn=$hideColumn."<a class='toggle-vis' data-column='$i'>{$header}</a>\n";    
+                        $hideColumn=$hideColumn."\n\t\t\t</td>\n";
                     }
                     $table=$table."\t\t</tr>\n\t</thead>\n";
                     $table=$table."\n\t<tbody>";
+                    $hideColumn=$hideColumn."\n\t\t</tr>\n";
                     // Filas de la tabla
                     while($row = mysqli_fetch_row($result))
                     {
@@ -132,16 +139,16 @@
                         $table=$table."\t\t</tr>\n";
                     }
                     //Terminamos Tabla
-                    $table=$table."\n\t</tbody>";
+                    $table=$table.$hideColumn."\n\t</tbody>";
                     //Imprimos Tabla
-                    echo $hideColumn."\n"."$table";
+                    echo "\n"."$table";
                 } else echo "<H1><br>Sin resultados</H1>";
             } else echo "Error en consulta:<b>".mysqli_error($link);
         ?>
 
-         <!--Para aplicacion de Header Estaticos jmosbech/StickyTableHeaders https://github.com/jmosbech/StickyTableHeaders
-          Tiene que ir al Final, si no, no funciona
-         -->
+        <!--Para aplicacion de Header Estaticos jmosbech/StickyTableHeaders https://github.com/jmosbech/StickyTableHeaders
+        Tiene que ir al Final, si no, no funciona
+        -->
         <script src="StickyTableHeaders-master/js/jquery.stickytableheaders.js"></script>
         <script>
             $("table").stickyTableHeaders();
