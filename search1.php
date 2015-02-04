@@ -8,17 +8,13 @@
         <title>Consolidado - NIMAX</title>
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!--<link rel="stylesheet" type="text/css" href="../css/jquery.dataTables.css">-->
+        <!--        Directorio donde estan los SCRIPT-->
         <link rel="stylesheet" type="text/css" href="jquery.dataTables.css">
 
-        <!--        <link rel="stylesheet" type="text/css" href=" http://cdn.datatables.net/1.10.4/css/jquery.dataTables.css">
-        -->
-
-
         <!--    Jquery para ordenacion y formato de tablas, si se descarga Jquery no es necesario las primeras 2 lineas-->
-        <!--        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>-->
-        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-        <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<!--        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>   -->
         <script src="http://cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
 
         <!--Onready, inicializa  jquery-->
@@ -29,10 +25,8 @@
         </script>     
         -->
 
-
+<!--        Jquery Tablesorter para la Ordenacion, busqueda, ocultar/mostrar columnas-->
         <script type="text/javascript" class="init">
-
-
             $(document).ready(function() {
                 var table = $('#example').DataTable( {
                     /*"scrollY": "200px",*/
@@ -49,24 +43,15 @@
                     column.visible( ! column.visible() );
                 } );
             } );
-
-
         </script>    
 
 
-
-
-
-
-        <!--        Directorio donde estan los SCRIPT-->
     </head>
 
     <body>
         <div>
-
         <?php
             //Hara una consulta a una DB en MySQL y con los datos obtenidos generara una tabla
-
             include('../php/connect.php');
             $namedb="consolidado_schema";
             $table="reportes2014";
@@ -88,7 +73,7 @@
 
             //                echo "-$query-<br>";
 
-            //VAriable que alojara el codigo HTML de la TABLA
+            //Variable que alojara el codigo HTML de la TABLA
             $table=$hideColumn="";
             //Contruir Tabla
             //Si se ejecuta la consulta
@@ -97,7 +82,6 @@
                 //Si la consulta no esta vacia
                 if(mysqli_num_rows($result)>0)
                 { 
-
                     $fields_num=mysqli_field_count($link);
                     $hideColumn="CLICK para OCULTAR/MOSTRAR columnas\n<br>";
                     $table=$table."<h3>Se encontraron ".mysqli_num_rows($result)." registro(s)</h3>\n";
@@ -105,17 +89,15 @@
 
                     /*                        $table=$table."<table data-role='table' data-mode='columntoggle' class='ui-responsive' class='display' id='example' cellspacing='0' width='100%'>\n\t<thead>\n\t\t<tr>\n";
                     */
-                    $table=$table."<table class='display' id='example' cellspacing='0' width='100%' border='1'>\n\t<thead>\n\t\t<tr>\n";
+                    $table=$table."<table id='example' cellspacing='0' width='100%' border='1'>\n\t<thead>\n\t\t<tr>\n";
 
-
-                    for($i=0;$i<$fields_num;$i++)
+                    //Numeracion de Columnas para identificacion de columnas a Ocultar/mostrar,
+                    /*                    for($i=0;$i<$fields_num;$i++)
                     {
 
-                        $table=$table."\t\t\t<td>\n$i\n\t\t\t</td>\n\n";
+                    $table=$table."\t\t\t<td>\n$i\n\t\t\t</td>\n\n";
                     }
-                    $table=$table."\t\t</tr>\n\t\n\t\t<tr>";
-
-
+                    $table=$table."\t\t</tr>\n\t\n\t\t<tr>";   */
 
 
                     // obtiene headers
@@ -157,6 +139,13 @@
             } else echo "Error en consulta:<b>".mysqli_error($link);
         ?>
 
+         <!--Para aplicacion de Header Estaticos jmosbech/StickyTableHeaders https://github.com/jmosbech/StickyTableHeaders
+          Tiene que ir al Final, si no, no funciona
+         -->
+        <script src="StickyTableHeaders-master/js/jquery.stickytableheaders.js"></script>
+        <script>
+            $("table").stickyTableHeaders();
+        </script> 
 
     </body>
 </html>
