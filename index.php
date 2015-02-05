@@ -13,20 +13,20 @@
         <meta name="keywords" content="">
         <meta name="creation-date" content="09/06/2012">
         <meta name="revisit-after" content="15 days">
-        <title>Untitled</title>
+        <title>Consolidado</title>
         <link rel="stylesheet" type="text/css" href="my.css">
     </head>
     <body>
         <div id="header-container">
             <header class="wrapper clearfix">
                 <h1 id="title">CONSOLIDADO</h1>
- <!-- Lista para MENU
-               <nav>
-                    <ul>
-                        <li><a href="#">nav ul li a</a></li>
-                        <li><a href="#">nav ul li a</a></li>
-                        <li><a href="#">nav ul li a</a></li>
-                    </ul>
+                <!-- Lista para MENU
+                <nav>
+                <ul>
+                <li><a href="#">nav ul li a</a></li>
+                <li><a href="#">nav ul li a</a></li>
+                <li><a href="#">nav ul li a</a></li>
+                </ul>
                 </nav>              -->
             </header>
         </div>
@@ -36,17 +36,24 @@
 
                 <article>
                     <header>
-                        <p>Selecciona críterio de búsqueda:
-                            <br>
+                        <p>
                             <form name="frmComp" id="frmComp" action="search1.php" method="get">
+                                
+                                Texto a buscar:<br>
+                                <input title:"Se necesita un valor" type="text" name="txtsearchby" required="required"><BR><BR>
+                                Selecciona críterio de búsqueda:<BR>
                                 <select name='searchby' id='searchby'>
                                     <option value='FOLIO'>FOLIO</option>
                                     <option value='NÚM. SERIE'>NÚM. SERIE</option>
                                     <option value='NÚM. DE ORDEN DE SERVICIO'>NÚM. DE ORDEN DE SERVICIO</option>
-                                </select><br>
-                                Texto a buscar:<br>
-                                <input title:"Se necesita un valor" type="text" name="txtsearchby" required="required">
-                                <input type="submit" value="BUSCAR" align="center" />
+                                </select>
+                                <input type="submit" value="BUSCAR" align="center" /><br><BR>
+                                
+                            
+                                <B>FORMATO:<BR></b>
+                                <b>FOLIO:</b> <BR>NMG00236 AB<BR><BR>
+                                <b>NÚM. SERIE:</b> <BR>11265522501293 / TE01946<BR><BR>
+                                <b>NÚM. DE ORDEN DE SERVICIO:</b> <BR>431696
                             </form>
                         </p>
                     </header>
@@ -60,8 +67,8 @@
 
         <div id="footer-container">
             <footer class="wrapper">
-            <!--<h3>footer</h3>-->
-                
+                <!--<h3>footer</h3>-->
+
             </footer>
         </div>
     </body>

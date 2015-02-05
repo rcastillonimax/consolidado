@@ -9,7 +9,10 @@
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!--        Directorio donde estan los SCRIPT-->
-        <link rel="stylesheet" type="text/css" href="jquery.dataTables.css">
+
+        <link rel="stylesheet" type="text/css" href="StickyTableHeaders-master/demo/css/custom.css">
+        <!--//conflicto con css-->
+        <!--<link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css">-->                    
 
         <!--    Jquery para ordenacion y formato de tablas, si se descarga Jquery no es necesario las primeras 2 lineas-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -30,7 +33,7 @@
             $(document).ready(function() {
                 var table = $('#example').DataTable( {
                     /*"scrollY": "200px",*/
-                    "paging": true
+                    "paging": false
                 } );
 
                 $('a.toggle-vis').on( 'click', function (e) {
@@ -72,7 +75,10 @@
             //Ejecutamos Query
             //$query="SELECT * FROM $table WHERE '".$searchby."' = \`".$txtsearchby."\`";
             //$query="SELECT * FROM $table";
-            $query="SELECT * FROM $table WHERE `$searchby` = '$txtsearchby'";
+            if($txtsearchby==='TODO'){
+                $query="SELECT * FROM $table WHERE 1";
+                
+            }else $query="SELECT * FROM $table WHERE `$searchby` = '$txtsearchby'";
 
             //                echo "-$query-<br>";
 
@@ -80,6 +86,8 @@
             $table=$hideColumn="";
             //Contruir Tabla
             //Si se ejecuta la consulta
+            $info="<h3><a href='index.php'>NUEVA BUSQUEDA</a></h3>";
+            $info=$info."<h4>$searchby = $txtsearchby<BR>";
             if($result=mysqli_query ($link,$query))
             {
                 //Si la consulta no esta vacia
@@ -87,7 +95,9 @@
                 { 
                     $fields_num=mysqli_field_count($link);
                     /*$hideColumn="CLICK para OCULTAR/MOSTRAR columnas\n<br>";*/
-                    $table=$table."<h3>Se encontraron ".mysqli_num_rows($result)." registro(s)</h3>\n";
+
+
+                    $info=$info."\tSe encontraron ".mysqli_num_rows($result)." registro(s)</h4>\n";
                     //comienza cabecera de la tabla
 
                     /*                        $table=$table."<table data-role='table' data-mode='columntoggle' class='ui-responsive' class='display' id='example' cellspacing='0' width='100%'>\n\t<thead>\n\t\t<tr>\n";
@@ -103,7 +113,7 @@
                     $table=$table."\t\t</tr>\n\t\n\t\t<tr>";   */
 
                     //Generamos row fila con encabezdos para ocultar columnas, se imprimira en la ultima fila
-                    $hideColumn="\n\t\t<tr>\n";
+                    $hideColumn="\n<tfoot>\n\t\t<tr>\n";
 
                     // obtiene headers
                     //Revisar, probablemente se pueda cambiar por un while***
@@ -121,13 +131,13 @@
                             $table=$table."\t\t\t<th class='header'>\n$espacios{$header}$espacios\n\t\t\t</th>\n\n";
                         } else $table=$table."\t\t\t<th class='header'>\n{$header}\n\t\t\t</th>\n\n";
 
-                        $hideColumn=$hideColumn."\n\t\t\t<td>\n";
+                        $hideColumn=$hideColumn."\n\t\t\t<th>\n";
                         $hideColumn=$hideColumn."<a class='toggle-vis' data-column='$i'>{$header}</a>\n";    
-                        $hideColumn=$hideColumn."\n\t\t\t</td>\n";
+                        $hideColumn=$hideColumn."\n\t\t\t</th>\n";
                     }
                     $table=$table."\t\t</tr>\n\t</thead>\n";
                     $table=$table."\n\t<tbody>";
-                    $hideColumn=$hideColumn."\n\t\t</tr>\n";
+                    $hideColumn=$hideColumn."\n\t\t</tr>\n</tfoot>\n";
                     // Filas de la tabla
                     while($row = mysqli_fetch_row($result))
                     {
@@ -141,9 +151,9 @@
                     //Terminamos Tabla
                     $table=$table.$hideColumn."\n\t</tbody>";
                     //Imprimos Tabla
-                    echo "\n"."$table";
-                } else echo "<H1><br>Sin resultados</H1>";
-            } else echo "Error en consulta:<b>".mysqli_error($link);
+                    echo $info."\n"."$table";
+                } else echo "Sin resultados</H4>";
+            } else echo "Error en consulta:<br>".mysqli_error($link)."</H4>";
         ?>
 
         <!--Para aplicacion de Header Estaticos jmosbech/StickyTableHeaders https://github.com/jmosbech/StickyTableHeaders
