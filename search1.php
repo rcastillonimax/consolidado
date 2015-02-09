@@ -31,10 +31,12 @@
         <!--        Jquery Tablesorter para la Ordenacion, busqueda, ocultar/mostrar columnas-->
         <script type="text/javascript" class="init">
             $(document).ready(function() {
+
                 var table = $('#example').DataTable( {
                     /*"scrollY": "200px",*/
-                    "paging": false
+                    "paging": true
                 } );
+
 
                 $('a.toggle-vis').on( 'click', function (e) {
                     e.preventDefault();
@@ -46,8 +48,9 @@
                     column.visible( ! column.visible() );
                     $('table').stickyTableHeaders('destroy');
                     $('table').stickyTableHeaders();
-
                 } );
+
+
             } );
         </script>    
 
@@ -55,7 +58,6 @@
     </head>
 
     <body>
-        <div>
         <?php
             //Hara una consulta a una DB en MySQL y con los datos obtenidos generara una tabla
             include('../php/connect.php');
@@ -76,8 +78,10 @@
             //$query="SELECT * FROM $table WHERE '".$searchby."' = \`".$txtsearchby."\`";
             //$query="SELECT * FROM $table";
             if($txtsearchby==='TODO'){
-                $query="SELECT * FROM $table WHERE 1";
-                
+                //ini_set(‘max_execution_time’, 0);
+                $query="SELECT * FROM reportes2014";
+                echo $query;
+
             }else $query="SELECT * FROM $table WHERE `$searchby` = '$txtsearchby'";
 
             //                echo "-$query-<br>";
@@ -141,6 +145,7 @@
                     // Filas de la tabla
                     while($row = mysqli_fetch_row($result))
                     {
+
                         $table=$table."\n\t\t<tr>\n";
                         // $row is array... foreach( .. ) puts every element
                         // of $row to $cell variable
@@ -152,8 +157,8 @@
                     $table=$table.$hideColumn."\n\t</tbody>";
                     //Imprimos Tabla
                     echo $info."\n"."$table";
-                } else echo "Sin resultados</H4>";
-            } else echo "Error en consulta:<br>".mysqli_error($link)."</H4>";
+                } else echo $info."<br>SIN RESULTADOS</H4>";
+            } else echo $info."<br>ERROR EN LA CONSULTA:<br>$query<br>".mysqli_error($link)."</H4>";
         ?>
 
         <!--Para aplicacion de Header Estaticos jmosbech/StickyTableHeaders https://github.com/jmosbech/StickyTableHeaders
